@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+
+  h1 Showing Album: #{returnAlbum.album}
+
+  p
+    h4 Genre: #{returnAlbum.genre}
+
+  p
+    h4 Artist: #{returnAlbum.artist}
+
+  p
+    a(href='/albums/#{returnAlbum._id}/edit') Edit
+
+  p
+    input(type='button' value='Delete')

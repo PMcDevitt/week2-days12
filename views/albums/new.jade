@@ -1,0 +1,39 @@
+extends ../layout
+
+block content
+
+  fieldset
+    legend Create album
+    form(method='POST' action='/albums/new')
+      p
+        label(for='artist') Artist
+          br
+          input(id='artist' type='text' name='artist')
+      p
+        label(for='album') Album
+          br
+          input(id='album' type='text' name='album')
+      p
+        label(for='genre') Genre
+          br
+          select(id='genre' name='genre')
+            option jazz
+            option pop
+            option rock
+      p
+        label Stars
+          br
+          span 1
+          input(type='radio' id='stars1' name='stars' value='1')
+          input(type='radio' id='stars2' name='stars' value='2')
+          input(type='radio' id='stars3' name='stars' value='3')
+          input(type='radio' id='stars4' name='stars' value='4')
+          input(type='radio' id='stars5' name='stars' value='5')
+          span 5
+
+      p
+          input(type='checkbox' id='containsChkBx' name='containsChkBx')
+          label(for='containsChkBx') Contains Explicit Lyrics
+      p
+        input(type='submit' value='Create Album')
+        a(href='/albums') cancel

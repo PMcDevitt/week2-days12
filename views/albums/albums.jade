@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+
+  h1 Albums
+
+  a(href='/albums/new') New Album
+
+  br
+  br
+
+  table(border='1px' width='500px')
+    tr
+      th(width='20%') Genre
+      th(width='40%') Artist
+      th(width='40%') Album
+    for album in albums
+      tr(align='center')
+        td= album.genre
+        td= album.artist
+        td
+          a(href='/albums/#{album._id}' id='album_link')= album.album

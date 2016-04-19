@@ -1,0 +1,39 @@
+extends ../layout
+
+block content
+
+  fieldset
+    legend Edit album
+    form(method='POST' action='/albums/edit?_method=PUT')
+      p
+        label(for='artist') Artist
+          br
+          input(id='artist' type='text' name='artist' value='#{returnAlbum.artist}')
+      p
+        label(for='album') Album
+          br
+          input(id='album' type='text' name='album' value='#{returnAlbum.album}')
+      p
+        label(for='genre') Genre
+          br
+          select(id='genre' name='genre' value='#{returnAlbum.genre}')
+            option jazz
+            option pop
+            option rock
+      p
+        label Stars
+          br
+          span 1
+          input(type='radio' id='stars1' name='stars' checked=returnAlbum.stars=='1')
+          input(type='radio' id='stars2' name='stars' checked=returnAlbum.stars=='2')
+          input(type='radio' id='stars3' name='stars' checked=returnAlbum.stars=='3')
+          input(type='radio' id='stars4' name='stars' checked=returnAlbum.stars=='4')
+          input(type='radio' id='stars5' name='stars' checked=returnAlbum.stars=='5')
+          span 5
+
+      p
+          input(type='checkbox' id='containsChkBx' name='containsChkBx')
+          label(for='containsChkBx') Contains Explicit Lyrics
+      p
+        input(type='submit' value='Update Album')
+        a(href='/albums') cancel
